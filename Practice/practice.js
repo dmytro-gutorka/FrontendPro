@@ -57,3 +57,21 @@ function isPalindrome(str) {
   }
 }
 
+function divideArrays(arr, size) {
+  let newArr = [];
+
+  if (size <= 0) {
+    return [];
+  } else if (arr.length <= size) {
+    console.log(1);
+    return [arr];
+  } else {
+    for (let i = 0; i < arr.length; i += size) {
+      newArr.push(arr.slice(i, size + i));
+    }
+  }
+
+  return newArr;
+}
+console.log(divideArrays([1, 2, 3, 4, 5], 8));
+
