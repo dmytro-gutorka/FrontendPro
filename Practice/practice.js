@@ -75,3 +75,20 @@ function divideArrays(arr, size) {
 }
 console.log(divideArrays([1, 2, 3, 4, 5], 8));
 
+
+function encrypt(str, n) {
+  if (n <= 0) return str;
+
+  let endUpperAlphabet = 90;
+  let shiftedString = "";
+  let encryptedLetters = str.split("").map((x) => x.charCodeAt(0));
+  let shiftedLetters = [];
+
+  for (let currentLetter of encryptedLetters) {
+    shiftedLetters.push(90 - ((90 - currentLetter + n) % 26));
+  }
+
+  shiftedString = String.fromCharCode(...shiftedLetters);
+
+  return shiftedString;
+}
