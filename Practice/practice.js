@@ -14,3 +14,15 @@ function sumSequence(n) {
 function mergeArrays(...arr) {
   return arr.flat();
 }
+
+
+function countLetters(str) {
+  let amountOfLetters = {};
+
+  for (let letter of str) {
+    if (letter !== " ")
+      amountOfLetters[letter] = amountOfLetters[letter] + 1 || 1;
+  }
+
+  return amountOfLetters;
+}
