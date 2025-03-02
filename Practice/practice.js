@@ -8,3 +8,9 @@ function sumSequence(n) {
 
   return sum.toFixed(2);
 }
+
+
+
+function mergeArrays(...arr) {
+  return arr.flat();
+}
