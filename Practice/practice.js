@@ -26,3 +26,34 @@ function countLetters(str) {
 
   return amountOfLetters;
 }
+
+
+
+function isPalindrome(str) {
+  let numberOfLetters = Object.values(countLetters(str));
+
+  if (str.length % 2 === 0) {
+    if (numberOfLetters.some((i) => i % 2 !== 0)) {
+      return false;
+    } else {
+      return true;
+    }
+  } else if (str.length % 2 !== 0) {
+    let conter = 0;
+
+    for (let i of numberOfLetters) {
+      if (i % 2 !== 0) {
+        conter++;
+      }
+    }
+
+    if (conter >= 3) {
+      return false;
+    } else {
+      return true;
+    }
+  } else {
+    return str === str.split("").reverse().join("");
+  }
+}
+
