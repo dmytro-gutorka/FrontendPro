@@ -1,59 +1,30 @@
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let messageText =  document.querySelector('.message')
-let textScore = document.querySelector('.score')
-let score = 20
-let highScore = 0
-let numberStyle = document.querySelector('.number')
+'use strict';
 
-let body = document.querySelector('body')
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelector('.close-modal');
+const overlay = document.querySelector('.overlay');
+const buttonsOpenModal = document.querySelectorAll('.show-modal');
 
 
-let highestScore = document.querySelector('.highscore')
+function closeModal(){
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
+}
+
+function openModal(){
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+}
 
 
-document.querySelector('.check').addEventListener(
-    'click', 
-    () => {
-        const guess = +document.querySelector('.guess').value
-        console.log(guess)
+for (let i = 0; i < buttonsOpenModal.length; i++) {
+   buttonsOpenModal[i].addEventListener("click", openModal)
+}
 
-        if (!guess) messageText.textContent = '🚫 No Number!'
-        
-        if (guess === secretNumber) {
-            messageText.textContent = 'Congratulations! You guessed the number 🎉'
-            document.querySelector('.number').textContent = secretNumber;
-            body.style.backgroundColor = '#60b347'
-            numberStyle.style.width = "30rem"
-
-            if (score > highScore) {
-                highScore = score
-                highestScore.textContent = highScore
-            }
-           
-            
-        } else {
-           if (score > 0) {
-               guess < secretNumber ? messageText.textContent = "Too low" : messageText.textContent = "Too high"
-               score--
-               textScore.textContent = score
-           } else {
-               messageText.textContent = "You've lost the game 😢 "
-           }
-        }
-        
-    })
+btnCloseModal.addEventListener('click', closeModal)
+overlay.addEventListener('click', closeModal)
 
 
-
-let againButton = document.querySelector('.again')
-
-againButton.addEventListener('click', () => {
-    score = 20
-    textScore.textContent = score
-    numberStyle.textContent = "?"
-    messageText.textContent = "Start guessing..."
-    body.style.backgroundColor = "#222"
-    numberStyle.style.width = "15rem"
-    document.querySelector('.guess').value = ''
+document.addEventListener('keydown', (e) =>{
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal()
 })
-
