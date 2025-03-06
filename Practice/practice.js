@@ -78,17 +78,6 @@
 //   }
 // }
 //
-//
-// function validBraces(braces){
-//     let length = braces.length
-//     let counter = 0
-//    
-//     while (counter < length) {
-//         counter++
-//         braces = braces.replace('[]', '')
-//         braces = braces.replace('{}', '')
-//         braces = braces.replace('()', '')
-//     }
-//     return braces
-// }
 
+
+console.log('HeLLo'.replace(/l/gi, ''))
