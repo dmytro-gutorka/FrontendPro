@@ -8,7 +8,7 @@
 //
 
 
-function aa() {
+function numbersMoreHundred() {
     let userChoice =  +prompt("Type any number grater than 100");
 
     if (userChoice > 100) return userChoice
