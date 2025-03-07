@@ -80,4 +80,34 @@
 //
 
 
-console.log('HeLLo'.replace(/l/gi, ''))
+// function solution(list){
+//     let rangeArrays = []
+//     let newString = ""
+//
+//     let tempArray = []
+//
+//     for (let item of list) {
+//
+//         if (item + 1 === list[list.indexOf(item) + 1] || item - 1 === tempArray[tempArray.length - 1]) {
+//             tempArray.push(item)
+//         } else {
+//             if (tempArray.length >= 3){
+//                 newString += `${tempArray[0]}-${tempArray[tempArray.length -1]}, `
+//                 tempArray.splice(0 ,tempArray.length)
+//             } else if (tempArray.length === 2) {
+//                 newString += `${tempArray[0]}, ${tempArray[1]}, `
+//                 tempArray.splice(0 ,tempArray.length)
+//             }
+//             newString += `${item}, `
+//         }
+//     }
+//
+//     return newString
+// }
+//
+// console.log(solution([3, 4, 5, 7, 9, 12, 13, 15]))
+// console.log(solution([3,4,5]))
+
+
+
+
