@@ -1,13 +1,3 @@
-
-// попросити ввести ще раз, і таке інше. 
-//     Якщо користувач вводить більше ста, 
-//     текст або цикл закінчує всі ітерації, 
-//     то функція виводить в консоль останній 
-// введення користувача і завершує функцію.
-//
-//
-
-
 function numbersMoreHundred() {
     let userChoice =  +prompt("Type any number grater than 100");
 
@@ -17,5 +7,6 @@ function numbersMoreHundred() {
         userChoice = +prompt("Try one more time");
         if (userChoice > 100) return userChoice
     }
-
 }
+
+// numbersMoreHundred();
