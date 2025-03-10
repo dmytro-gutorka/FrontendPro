@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56881879-4599-4572-9c70-bed382fbfd1a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Practice/practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/practice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw6/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/GameGuessNumber/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/GameGuessNumber/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/GameGuessNumber/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/ModalWindow/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/ModalWindow/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/ModalWindow/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/dice-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/pig-game-flowchart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/RollDiceGame/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/practice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/recursionPractice.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +67,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Run",
     "Node.js.practice.js.executor": "Debug",
     "Node.js.test.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -78,6 +96,16 @@
       <recent name="$PROJECT_DIR$/hw5" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/FrontEndPro/Practice/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -97,7 +125,7 @@
       <workItem from="1740510098776" duration="68030000" />
       <workItem from="1740949625607" duration="1726000" />
       <workItem from="1740992257984" duration="25043000" />
-      <workItem from="1741094377761" duration="63379000" />
+      <workItem from="1741094377761" duration="75215000" />
     </task>
     <servers />
   </component>
