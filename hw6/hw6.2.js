@@ -1,7 +1,7 @@
 function arithmeticMean(array){
     let sum = 0;
     for (let num of array){
-        sum += +num
+        if (typeof num === 'number') sum += +num
     }
     return sum
 }
