@@ -26,12 +26,9 @@ todoList.addEventListener('click', function(e) {
 
     const item = e.target.closest('.todo__list-item');
     const index = Array.from(todoList.children).indexOf(item);
-    console.log(index)
-    console.log('arr', tasks)
 
     tasks.splice(index, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log('arr', tasks)
 
     item.remove();
 })
@@ -51,7 +48,6 @@ function createTask(task) {
 
 function renderTodoList() {
     const localStorageTasks = JSON.parse(localStorage.getItem('tasks'))
-    console.log(localStorageTasks)
 
     localStorageTasks.forEach(task => {
         const markup = `
