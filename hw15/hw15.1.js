@@ -1,10 +1,9 @@
-const todoFrom = document.querySelector('.todo__form')
 const todoInputDescription = document.querySelector('.todo__form-input')
+const todoFrom = document.querySelector('.todo__form')
 const todoList = document.querySelector('.todo__list')
 
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
 
 
 todoFrom.addEventListener('submit', function (e) {
@@ -26,12 +25,9 @@ todoList.addEventListener('click', function(e) {
 
     const item = e.target.closest('.todo__list-item');
     const index = Array.from(todoList.children).indexOf(item);
-    console.log(index)
-    console.log('arr', tasks)
 
     tasks.splice(index, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log('arr', tasks)
 
     item.remove();
 })
