@@ -13,7 +13,7 @@ todoFrom.addEventListener('submit', function (e) {
 
     createTask(task)
 
-    tasks.unshift(task)
+    tasks.push(task)
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
     todoInputDescription.value = ''
@@ -24,7 +24,7 @@ todoList.addEventListener('click', function(e) {
     if (!e.target.classList.contains('delete-btn')) return;
 
     const item = e.target.closest('.todo__list-item');
-    const index = Array.from(todoList.children).indexOf(item);
+    const index = Array.from(todoList.children).reverse().indexOf(item);
 
     tasks.splice(index, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -47,16 +47,7 @@ function createTask(task) {
 
 function renderTodoList() {
     const localStorageTasks = JSON.parse(localStorage.getItem('tasks'))
-    console.log(localStorageTasks)
-
-    localStorageTasks.forEach(task => {
-        const markup = `
-        <li class="todo__list-item">${task}
-        <button class="delete-btn">Delete</button>
-        </li>`
-
-        todoList.insertAdjacentHTML('afterbegin', markup)
-    })
+    localStorageTasks?.forEach(task => createTask(task))
 }
 
 
