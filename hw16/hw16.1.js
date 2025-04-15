@@ -1,5 +1,7 @@
-function Student(name, birthYear, ARRAY_LIMIT = 5) {
-    this.ARRAY_LIMIT = ARRAY_LIMIT
+ARRAY_LIMIT = 5
+
+
+function Student(name, birthYear) {
     this.name = name;
     this.birthYear = birthYear;
     this.grades = [];
@@ -37,7 +39,7 @@ Student.prototype.absent = function () {
 
 
 Student.prototype.isArrayLimitExceeded = function() {
- return this.attendanceLog.length  >= this.ARRAY_LIMIT
+ return this.attendanceLog.length  >= ARRAY_LIMIT
 }
 
 
