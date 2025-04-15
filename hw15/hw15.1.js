@@ -1,10 +1,9 @@
-const todoFrom = document.querySelector('.todo__form')
 const todoInputDescription = document.querySelector('.todo__form-input')
+const todoFrom = document.querySelector('.todo__form')
 const todoList = document.querySelector('.todo__list')
 
 
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
 
 
 todoFrom.addEventListener('submit', function (e) {
