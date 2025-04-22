@@ -1,7 +1,7 @@
 function renderTimerTime(time) {
     const timerContainer = document.querySelector('.timer')
 
-    const minutes = ~~(time / 60)
+    const minutes = String( ~~(time / 60)).padStart(2, 0)
     const seconds = String((time % 60)).padStart(2, 0)
 
     timerContainer.textContent = `${minutes}:${seconds}`
