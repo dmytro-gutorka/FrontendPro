@@ -43,3 +43,5 @@ function initTimer(initialTime) {
 const timerArrowRotate = setTimerArrowRotate()
 const setTimer = initTimer(120)
 setTimer()
+
+
