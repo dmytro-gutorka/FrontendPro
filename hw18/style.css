@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #353232;
+}
+
+.timer-container {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    color: white;
+}
+
+.timer-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 3px solid lightblue;
+}
+
+.inner-circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.timer-arrow{
+    position: absolute;
+    content: '';
+    background-color: lightcoral;
+    height: 50%;
+    width: 2px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    rotate: 0deg;
+
+}
