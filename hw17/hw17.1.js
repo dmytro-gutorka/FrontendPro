@@ -1,7 +1,7 @@
 class Calculator {
 
 
-    amountOfNumberValidation(...numbers) {
+    lengthOfNumberValidation(...numbers) {
         if (numbers.length <= 1) {
             console.log('Enter at least 2 numbers')
             return;
@@ -9,7 +9,7 @@ class Calculator {
     }
 
 
-    onlyNumberValidation(...numbers) {
+    isNumberValidation(...numbers) {
         numbers.forEach(number => {
             if (typeof number !== 'number') {
                 console.log('Please, enter only numbers')
@@ -20,8 +20,8 @@ class Calculator {
 
 
     initValidations(...numbers) {
-        this.amountOfNumberValidation(...numbers)
-        this.onlyNumberValidation(...numbers)
+        this.lengthOfNumberValidation(...numbers)
+        this.isNumberValidation(...numbers)
     }
 
 
