@@ -13,7 +13,7 @@ class Calculator {
         numbers.forEach(number => {
             if (typeof number !== 'number') {
                 console.log('Please, enter only numbers')
-                return
+                return;
             }
         })
     }

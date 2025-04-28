@@ -1,4 +1,4 @@
-function renderTimerTime(time) {
+function renderTimer(time) {
     const timerContainer = document.querySelector('.timer')
 
     const minutes = String( ~~(time / 60)).padStart(2, 0)
@@ -24,7 +24,7 @@ function setTimerArrowRotate() {
 function initTimer(initialTime) {
     let second = initialTime
 
-    renderTimerTime(second)
+    renderTimer(second)
     timerArrowRotate()
 
     return function() {
@@ -32,7 +32,7 @@ function initTimer(initialTime) {
             second -= 1
 
             timerArrowRotate()
-            renderTimerTime(second)
+            renderTimer(second)
 
             if (second === 0) clearInterval(timer)
         }, 1000)
