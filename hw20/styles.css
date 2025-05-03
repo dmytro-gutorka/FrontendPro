@@ -8,23 +8,17 @@ body {
 .card-container {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 50px;
 
     margin-block: 50px;
-    max-width: 600px;
 }
 
 
 .card {
     display: flex;
-    align-items: end;
     flex-direction: column;
-
-    border: 1px solid #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px #ccc;
-    padding: 10px;
     row-gap: 20px;
+
 }
 
 
@@ -39,10 +33,30 @@ body {
 }
 
 
-.card__inner {
+.card__post {
+    border: 1px solid #9f9a9a;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #ccc;
+    padding: 10px;
+}
+
+.comment__card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
+
+
+.comment__card {
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
+    row-gap: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d6d0d0;
+
+}
+
+.comment__name {
+    padding-bottom: 5px;
 }
 
 
@@ -55,4 +69,45 @@ body {
     border: none;
     text-transform: uppercase;
     cursor: pointer;
+
+    justify-self: end;
 }
+
+.comment-container{
+    width: 90%;
+}
+
+.card__post {
+    display: grid;
+    row-gap: 20px;
+}
+
+
+.notification-container {
+    padding: 50px 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: fixed;
+    top: 0;
+    left: calc(100% - 200px);
+    width: 200px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.card-notification {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-right: 40px;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: rgba(144, 238, 144, 0.5);
+}
+

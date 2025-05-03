@@ -1,29 +1,8 @@
-
-// Під кожним постом повинна бути кнопка"Завантажити коментарі".
-//     Отримання коментарів до постів:
-//     Коли користувач натискає на кнопку "Завантажити коментарі" під конкретним постом, виконуйте GET запит для отримання перших 2х коментарів до цього поста.
-//     URL для запиту: https://jsonplaceholder.typicode.com/posts/{postId}/comments?_limit=2, де {postId} – ідентифікатор поста.
-//     Після завантаження відобразіть коментарі під постом. Кожен коментар повинен містити:
-//     Ім'я (name)
-// Email (email)
-// Текст коментаря (body)
-// Створення нового поста:
-//     Реалізуйте форму, що дозволяє користувачу створити новий пост. У формі повинні бути два поля:
-//     Заголовок (title)
-// Текст (body)
-// При відправці форми виконуйте POST запит на URL: https://jsonplaceholder.typicode.com/posts.
-//     Відправте дані у такому форматі:
-//     json
-// {
-//     "title": "Заголовок поста",
-//     "body": "Текст поста",
-//     "userId": 1
-// }
-// Після успішного створення поста відобразьте повідомлення про успіх (наприклад, "Пост створено успішно") і додайте новій пост до списку на екрані.
-
 const URL = 'https://jsonplaceholder.typicode.com';
 
 const cardsContainerElement = document.querySelector('.card-container')
+const cardPostForm = document.querySelector('#card-post-form')
+const notificationContainer = document.querySelector('.notification-container')
 
 
 fetch(`${URL}/posts?_limit=10`)
@@ -31,22 +10,17 @@ fetch(`${URL}/posts?_limit=10`)
     .then(posts => renderPostCard(posts))
 
 
-
 function renderPostCard(posts) {
-    cardsContainerElement.innerHTML = '';
-
-    const markup = posts.forEach(post => {
+    posts.forEach(post => {
         const markup = `
             <div class="card" data-js-card-id=${post.id}>
-                <div class="card__inner">
-                    <div class="card__header">
-                        ${post.title}
+                <div class="card__post">
+                    <div class="card__content">
+                        <div class="card__header">${post.title}</div>
+                        <div class="card__body">${post.body}</div>
                     </div>
-                    <div class="card__body">
-                        ${post.body}
-                    </div>
+                    <button class="card__generate-comments-button">Generate comments</button>
                 </div>
-                <button class="card__generate-comments-button">Generate comments</button>
             </div>
     `
         cardsContainerElement.insertAdjacentHTML('afterbegin', markup)
@@ -54,12 +28,48 @@ function renderPostCard(posts) {
 }
 
 
+function renderCommentsForPostCard(comments, cardElement) {
+    comments.forEach(comment => {
+        const markup = `
+            <div class="comment-container">
+                <div class="comment__card">
+                <span class="comment__email">${comment.email}</span>
+                    <div class="comment__content">
+                        <div class="comment__name">${comment.name}</div>
+                        <div class="comment__body">${comment.body}</div>
+                    
+                    </div>
+                </div>
+            </div>`
+        cardElement.insertAdjacentHTML('beforeend', markup)
 
-
-function renderCommentsForPostCard() {
-
+    })
 }
 
+
+function createPost(data) {
+    fetch(`${URL}/posts`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    })
+        .then(res => {
+            if (res.ok) renderPostCreationNotification()
+        })
+}
+
+
+function renderPostCreationNotification() {
+    const markup = `<span class="card-notification">post created</span>`
+
+    notificationContainer.insertAdjacentHTML('afterbegin', markup)
+
+    setTimeout(() => {
+        notificationContainer.removeChild(notificationContainer.lastElementChild)
+    }, 3000)
+}
 
 
 cardsContainerElement.addEventListener('click', function(e) {
@@ -67,11 +77,24 @@ cardsContainerElement.addEventListener('click', function(e) {
 
     if (e.target !== generateCommentsButton) return;
 
-    const postCardId = generateCommentsButton.closest('.card').dataset.jsCardId
+    const postCardElement = generateCommentsButton.closest('.card')
+    const postCardId = postCardElement.dataset.jsCardId
 
     fetch(`${URL}/posts/${postCardId}/comments?_limit=2`)
         .then(res => res.json())
-        .then(comments => renderCommentsForPostCard(comments))
+        .then(comments => renderCommentsForPostCard(comments, postCardElement))
 })
 
+
+cardPostForm.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    const formData = new FormData(cardPostForm);
+    const formDataObj = {};
+
+    formData.forEach((value, key) => formDataObj[key] = value);
+
+    createPost(formDataObj)
+    renderPostCard([formDataObj])
+})
 

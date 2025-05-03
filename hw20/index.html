@@ -9,20 +9,26 @@
     <title>Document</title>
 </head>
 <body>
+
+
+<div class="notification-container">
+</div>
+
 <main>
+    <form id="card-post-form">
+        <input id="id" type="hidden" name="userId">
+        <label for="card-title">
+            <input id="card-title" type="text" name="title" required>
+        </label>
+        <label for="card-body">
+            <input id="card-body" type="text" name="body" required>
+        </label>
+
+        <button type="submit">Create Post</button>
+    </form>
 
 <div class="card-container">
 
-  <div class="card" data-js-card-id="">
-    <div class="card__inner">
-      <div class="card__content">
-        <div class="card__header"></div>
-        <div class="card__body"></div>
-      </div>
-      <button class="card__generate-comments-button">Generate comments</button>
-    </div>
-
-  </div>
 
 </div>
 </main>
