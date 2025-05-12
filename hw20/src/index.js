@@ -1,3 +1,6 @@
+import './styles.scss';
+
+
 const URL = 'https://jsonplaceholder.typicode.com';
 
 const cardsContainerElement = document.querySelector('.card-container')
@@ -42,7 +45,6 @@ function renderCommentsForPostCard(comments, cardElement) {
                 </div>
             </div>`
         cardElement.insertAdjacentHTML('beforeend', markup)
-
     })
 }
 
