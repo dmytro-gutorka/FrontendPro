@@ -1,0 +1,12 @@
+.todos-container {
+    display: grid;
+    row-gap: 20px;
+
+    padding: 40px;
+}
+
+.todo-card {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}

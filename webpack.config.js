@@ -3,8 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
+
 module.exports = {
-    entry: './src/index.js',
+    entry: './frontend/src/index.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -29,7 +30,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './frontend/src/index.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css'
@@ -46,7 +47,7 @@ module.exports = {
         open: true,
         hot: true,
         watchFiles: ['./src/**/*'],
-        port: 3002
+        port: 3003
     },
     mode: 'production'
 };
