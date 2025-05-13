@@ -64,6 +64,16 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     todos.push(req.body)
+
+    res.send({'status': 200})
+})
+
+
+app.put('/:id', (req, res) => {
+    const todoId = +req.params.id
+    const todoById = todos.find(todo => todoId === todo.id)
+    todoById.title = req.body.title
+
     res.send({'status': 200})
 })
 
@@ -73,5 +83,6 @@ app.delete('/:id', (req, res) => {
     const todoIndex = todos.findIndex(todo => todoId === todo.id)
 
     todos.splice(todoIndex, 1)
+
     res.send({'status': 200})
 })

@@ -32,8 +32,14 @@ function deleteTodo(todoId) {
 }
 
 
-function updateTodo() {
-
+function updateTodo(todoId, title) {
+    return fetch(`${URL}/${todoId}`, {
+        method: "PUT",
+        body: JSON.stringify(title),
+        headers: {
+            "Content-Type": "application/json",
+        }
+    })
 }
 
 
@@ -43,6 +49,7 @@ function renderTodos(todosData) {
             <div class="todo-card" data-js-todo-id=${todo.id}>
                 <input class="todo-card__checkbox" type="checkbox">
                 <h3 class="todo-card__header">${todo.title}</h3>
+                  <div class="todo-card__edit-button">✎</div>
                 <div class="todo-card__delete-button">✖</div>
             </div>
         `
@@ -77,6 +84,24 @@ todosContainer.addEventListener('click', async function(e) {
     renderTodos(await getTodos())
 })
 
+
+todosContainer.addEventListener('click', async function(e) {
+    if (!e.target.classList.contains('todo-card__edit-button')) return;
+
+    const todoCard = e.target.closest('.todo-card');
+    const todoId = +todoCard.dataset.jsTodoId;
+    const titleElement = todoCard.querySelector('.todo-card__header')
+    const currentTitle = titleElement.textContent;
+
+    const newTitle = prompt('Change the task:', currentTitle)
+
+    if (newTitle && newTitle.trim() !== '' && newTitle !== currentTitle) {
+        await updateTodo(todoId, { title: newTitle })
+        titleElement.textContent = newTitle
+
+    }
+
+})
 
 renderTodos(await getTodos())
 
